@@ -132,9 +132,10 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         except NameError:
             print("** class doesn't exist **")
-        new_instance = HBNBCommand.classes[class_name](**arg_dict)
-        new_instance.save()
+        new_instance = eval(class_name)(**arg_dict)
+        storage.new(new_instance)
         print(new_instance.id)
+        new_instance.save()
         # storage.save()
         # print(new_instance.id)
         # storage.save()
