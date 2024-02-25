@@ -24,7 +24,7 @@ class BaseModel:
                 self.created_at = datetime.now()
             if "updated_at" not in kwargs:
                 self.updated_at = datetime.now()
-           # del kwargs['__class__']
+            # del kwargs['__class__']
             self.__dict__.update(kwargs)
 
     def __str__(self):
